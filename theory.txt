@@ -1,0 +1,12 @@
+1- What is container?
+ans: A way to package application with all the necessary dependencies and configuration. It makes development and deployment easy.
+
+2- where do container live?
+ans- containers live in container repository. Many companies have their own private repository where they host their containers. 
+     Dockerhub is a public repository for containers.
+
+
+3- what is the differnece between normal development and with Docker
+and- if docker is not there then all the services are installed in OS which can lead to dependency mismatch
+
+
