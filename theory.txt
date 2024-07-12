@@ -7,6 +7,37 @@ ans- containers live in container repository. Many companies have their own priv
 
 
 3- what is the differnece between normal development and with Docker
-and- if docker is not there then all the services are installed in OS which can lead to dependency mismatch
+ans- if docker is not there then all the services are installed in OS which can lead to dependency mismatch
+
+4 - difference between docker image and container
+ans: image is application with dependencies and configurations and container
+     is running image
 
 
+5 - what is the difference between docker and virtual machine?
+ans: OS has two layers one is kernel and applications. kernel layers communicates
+     with hardware and applications layer run on kernel layer. Docker and virtual
+     machine both are virtualization tools but docker has the application and uses
+     the kernel of the host whereas virtual machine has its own application and 
+     kernel. That is the reason size of docker image is much smaller.
+     VM of any OS can run on any OS of host but docker cannot. docker window application 
+     migh not be compatible with linux.
+
+docker basic commands
+1) docker pull image_name
+2) docker images: for listing all the images
+3) docker run image_name: to run the image
+4) docker ps: for lisitng running container
+5) docker ps -a: for listing running and not running containers. suppose you stop a container today and want to start its
+                 tomorrow. for that you need to run command: docker start container_id. Now if you type docker ps. No container
+                 will be shown. So to fetch the container_id you can use docker ps -a.
+
+Container port vs host port
+- If we just run the command: docker run redis and the container is there on 6379 port. but this redis is not accessible ans
+  we have not provided any binding for container port and the host port. To make it accessible we neep to give a binding.
+  
+- docker run -p 6000:6379: first port is host port and second is the container port
+- we can start the container in detached mode using
+  docker run - p 6000:6379 -d
+
+- docker exec -it container_id /bin/bash: for going inside the terminal
